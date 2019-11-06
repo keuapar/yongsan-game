@@ -1,0 +1,181 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Waiting for the sunrise', cursive;
+
+    /* custom variables - color */
+    --light-grey: rgb(100, 100, 100);
+    --dark-grey: rgb(80, 80, 80);
+    --white: rgb(222, 222, 222);
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.landing {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-grey);
+    display: grid;
+    color: var(--white);
+    grid-template-columns: 1fr 15% 1fr;
+    grid-template-rows: 1fr 1% 1fr;
+    grid-template-areas:
+        "title title title"
+        "line1 button line2"
+        "credits credits credits";
+    place-items: center;
+}
+
+.title {
+    grid-area: title;
+    font-family: 'Rock Salt', cursive;
+    font-size: 2em;
+    animation: fadeInTitle 1.5s;
+    text-align: center;
+}
+@keyframes fadeInTitle {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.credits {
+    grid-area: credits;
+    text-align: center;
+    font-size: 0.7em;
+    animation: fadeInTitle 1.5s;
+    align-self: end;
+    padding-bottom: 5%;
+}
+
+.GO-button {
+    background-color: var(--white);
+    padding: 15%;
+    color: var(--dark-grey);
+    grid-area: button;
+    font-size: 1.3em;
+    max-width: 50px;
+    box-shadow: 3px 3px 3px;
+    animation: fadeInGO 3.5s;
+    transition: 0.3s;
+}
+
+.GO-button:hover {
+    cursor: pointer;
+    background-color: var(--dark-grey);
+    color: var(--white);
+}
+
+.line1, .line2 {
+    background-color: var(--white);
+    height: 1px;
+    width: 100%;
+    animation: fadeInLine 2s;
+}
+
+.line1 {
+    justify-self: left;
+}
+.line2 {
+    justify-self: right;
+}
+@keyframes fadeInLine {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+
+.story {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--light-grey);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+}
+
+.choice-screen-2 {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-grey);
+    display: grid;
+    color: var(--white);
+    grid-template-columns: 1fr 15% 1fr;
+    grid-template-rows: 1fr 1% 1fr;
+    grid-template-areas:
+        "choice1 choice1 choice1"
+        "line1 button line2"
+        "choice2 choice2 choice2";
+    place-items: center;
+}
+
+.story-node-name {
+    padding-top: 10%;
+    padding-bottom: 5%;
+    align-self: center;
+    font-size: 2em;
+}
+
+.story-node-text {
+    padding: 10px 10%;
+}
+
+.story-node-text-p {
+    padding: 10px 0px;
+}
+
+.story-node-choice {
+    padding-top: 5%;
+    align-self: center;
+    font-size: 1.5em;
+}
+
+.map-button {
+    z-index: 10;
+    position: fixed;
+    max-width: 50px;
+    max-height: 30px;
+    top: 5%;
+    left: 5%;
+    background-color: var(--white);
+    padding: 10px;
+    box-shadow: 2px 2px 2px;
+    transition: 0.3s;
+}
+
+.map-button-index {
+    animation: fadeInGO 5s;
+}
+@keyframes fadeInGO {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.map-button:hover {
+    cursor: pointer;
+    color: var(--white);
+    background-color: var(--dark-grey);
+}
+
+.map {
+    z-index: 5;
+    position: fixed;
+    height: 96vh;
+    width: 96%;
+    top: 2%;
+    left: 2%;
+    box-shadow: 0px 0px 5px;
+    background-color: var(--dark-grey);
+    visibility: hidden;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    color: var(--white);
+}
