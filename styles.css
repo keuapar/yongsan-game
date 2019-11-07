@@ -68,6 +68,11 @@ a {
     animation: fadeInGO 3.5s;
     transition: 0.3s;
 }
+@keyframes fadeInGO {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
 
 .GO-button:hover {
     cursor: pointer;
@@ -189,11 +194,11 @@ a {
 }
 
 .map-button-start {
-    animation: fadeInGO 3s;
+    animation: fadeInMap 13s;
 }
-@keyframes fadeInGO {
+@keyframes fadeInMap {
     0% {opacity: 0;}
-    50% {opacity: 0;}
+    90% {opacity: 0;}
     100% {opacity: 1;}
 }
 

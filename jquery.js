@@ -14,11 +14,13 @@ $(document).ready(function () {
             hH = $('.choice-screen').outerHeight(),
             wH = $(window).height(),
             wS = $(this).scrollTop();
-            //console.log(wS, lastScrollTop);
+        //console.log(wS, lastScrollTop);
         if (wS + wH >= hT && once) {
-            var bottom = hT + hH;
-            $('html, body').animate({scrollTop:bottom}, 3000);
             once = false;
+            var bottom = hT + hH;
+            $('html, body').animate({
+                scrollTop: bottom
+            }, 2000);
         }
     });
 
@@ -30,15 +32,80 @@ $(document).ready(function () {
         Cookies.set('plan', 'considering');
         Cookies.set('sure', 'perhaps');
         window.location = $(this).attr('url');
-        return false
+        return false;
         // blackout the screen
     });
 
     // choice redirect (put url as div parameter)
     $('.choice').click(function () {
         window.location = $(this).attr('url');
-        return false
+        return false;
     })
+
+    // story typewriter
+    var timeBetweenLetters = 30,
+        timeBetweenParagraphs = 500;
+
+    if ($('.story').length) {
+        var name = $('.story-node-name').text(),
+            storyNodeText = $('.story-node-text-p').toArray(),
+            text = [],
+            choice = $('.story-node-choice').text();
+        $('.story-node-text-p').each(function () {
+            text.push($(this).text())
+        });
+        $('.story-node-name').text('');
+        $('.story-node-text-p').text('');
+        $('.story-node-choice').text('');
+
+        var nameTimerInt = setInterval(function () {
+            $('.story-node-name').append(name[0]);
+            name = name.substring(1);
+            if (name.length == 0) {
+                console.log('Done printing the title.');
+                clearInterval(nameTimerInt);
+                setTimeout(function(){
+                    textTimer(0);
+                }, timeBetweenParagraphs);
+                return;
+            }
+        }, timeBetweenLetters);
+
+        var numberOfTexts = text.length;
+        var textTimer = function (i) {
+            if (i == numberOfTexts) {
+                choiceTimer();
+                return;
+            }
+            var currentP = $('.story-node-text-p').eq(i);
+            var textP = text[i];
+
+            var textTimerInt = setInterval(function () {
+                currentP.append(textP[0]);
+                textP = textP.substring(1);
+                if (textP.length == 0) {
+                    console.log('Done printing a text paragraph.');
+                    clearInterval(textTimerInt);
+                    setTimeout(function(){
+                        textTimer(i + 1);
+                    }, timeBetweenParagraphs);
+                    return;
+                }
+            }, timeBetweenLetters);
+        };
+
+        var choiceTimer = function () {
+            var choiceTimerInt = setInterval(function () {
+                $('.story-node-choice').append(choice[0]);
+                choice = choice.substring(1);
+                if (choice.length == 0) {
+                    console.log('Done printing the choice.');
+                    clearInterval(choiceTimerInt);
+                    return;
+                }
+            }, timeBetweenLetters);
+        };
+    }
 
     // switch map and back to game
     $('.map-button').click(function () {
