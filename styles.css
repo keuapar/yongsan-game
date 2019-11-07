@@ -146,6 +146,28 @@ a {
     color: var(--white);
 }
 
+.choice-screen-1 {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-grey);
+    display: grid;
+    color: var(--white);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "choice1";
+    place-items: center;
+}
+
+.choice-screen-1-1 {
+    grid-area: choice1;
+}
+
+.choice-screen-1-1 {
+    text-align: center;
+    max-width: 40%;
+}
+
 .choice-screen-2 {
     width: 100%;
     height: 100vh;

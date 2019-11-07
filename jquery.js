@@ -27,10 +27,9 @@ $(document).ready(function () {
     // start game
     $('.GO-button').click(function () {
         // creating cookies
-        Cookies.set('feeling', 'calm');
-        Cookies.set('door', 'look');
-        Cookies.set('plan', 'considering');
-        Cookies.set('sure', 'perhaps');
+        Cookies.set('feeling', '-');
+        Cookies.set('door', '-')
+        // start game
         window.location = $(this).attr('url');
         return false;
         // blackout the screen
@@ -38,12 +37,13 @@ $(document).ready(function () {
 
     // choice redirect (put url as div parameter)
     $('.choice').click(function () {
+        Cookies.set($(this).attr('data-cookiename'), $(this).attr('data-cookievalue'))
         window.location = $(this).attr('url');
         return false;
     })
 
     // story typewriter
-    var timeBetweenLetters = 30,
+    var timeBetweenLetters = 25,
         timeBetweenParagraphs = 500;
 
     if ($('.story').length) {
