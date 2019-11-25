@@ -131,6 +131,17 @@ a {
     font-size: 1.5em;
 }
 
+.story-node-image-4s {
+    max-width: 100%;
+    animation: fadeInImage 4s;
+}
+
+@keyframes fadeInImage {
+    0% {opacity: 0;}
+    70% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 .choice {
     width: 100%;
     height: 100%;

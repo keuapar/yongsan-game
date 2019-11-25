@@ -42,11 +42,20 @@ $(document).ready(function () {
         return false;
     })
 
+    // play audiofile
+    timer = parseInt($('.story-node-audio').data('timer'));
+    console.log(timer);
+    setTimeout(function() {
+        $('.story-node-audio').trigger('play');
+    }, timer);
+
     // story typewriter
     var timeBetweenLetters = 25,
         timeBetweenParagraphs = 500;
 
     if ($('.story').length) {
+
+        // store text of the story (name, p, choice)
         var name = $('.story-node-name').text(),
             storyNodeText = $('.story-node-text-p').toArray(),
             text = [],
@@ -54,10 +63,12 @@ $(document).ready(function () {
         $('.story-node-text-p').each(function () {
             text.push($(this).text())
         });
+        // clear all text so it can be printed
         $('.story-node-name').text('');
         $('.story-node-text-p').text('');
         $('.story-node-choice').text('');
 
+        // print the story node name, letter by letter
         var nameTimerInt = setInterval(function () {
             $('.story-node-name').append(name[0]);
             name = name.substring(1);
@@ -71,6 +82,7 @@ $(document).ready(function () {
             }
         }, timeBetweenLetters);
 
+        // print story paragraphs, letter by letter
         var numberOfTexts = text.length;
         var textTimer = function (i) {
             if (i == numberOfTexts) {
@@ -94,6 +106,7 @@ $(document).ready(function () {
             }, timeBetweenLetters);
         };
 
+        // print the choice prompt, letter by letter
         var choiceTimer = function () {
             var choiceTimerInt = setInterval(function () {
                 $('.story-node-choice').append(choice[0]);
