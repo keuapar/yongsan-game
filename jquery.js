@@ -38,9 +38,17 @@ $(document).ready(function () {
     // choice redirect (put url as div parameter)
     $('.choice').click(function () {
         // save the choice Cookie
-        Cookies.set($(this).attr('data-cookiename'), $(this).attr('data-cookievalue'))
-        window.location = $(this).attr('url');
-        return false;
+        if ($(this).attr('data-cookiename') == 'reset') {
+            Cookies.set('6', 'False');
+            Cookies.set('8', 'False');
+            console.log('Cookies have been reset');
+            window.location = $(this).attr('url');
+            return false;
+        } else {
+            Cookies.set($(this).attr('data-cookiename'), $(this).attr('data-cookievalue'))
+            window.location = $(this).attr('url');
+            return false;
+        }
     })
 
     // play audiofile
