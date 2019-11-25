@@ -126,7 +126,7 @@ a {
 
 .story-node-choice {
     padding-top: 5%;
-    padding-bottom: 15%;
+    padding-bottom: 5%;
     align-self: center;
     font-size: 1.5em;
 }
@@ -136,6 +136,16 @@ a {
     animation: fadeInImage 4s;
 }
 
+.story-node-image-8s {
+    max-width: 100%;
+    animation: fadeInImage 8s;
+}
+
+.story-node-image-20s {
+    max-width: 100%;
+    animation: fadeInImage 20s;
+}
+
 @keyframes fadeInImage {
     0% {opacity: 0;}
     70% {opacity: 0;}
@@ -143,8 +153,8 @@ a {
 }
 
 .choice {
-    width: 100%;
     height: 100%;
+    width: 100%;
     font-size: 2em;
     transition: 0.3s;
     display: flex;
@@ -174,9 +184,9 @@ a {
     grid-area: choice1;
 }
 
-.choice-screen-1-1 {
+.choice p {
+    max-width: 50%;
     text-align: center;
-    max-width: 40%;
 }
 
 .choice-screen-2 {

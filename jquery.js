@@ -37,6 +37,7 @@ $(document).ready(function () {
 
     // choice redirect (put url as div parameter)
     $('.choice').click(function () {
+        // save the choice Cookie
         Cookies.set($(this).attr('data-cookiename'), $(this).attr('data-cookievalue'))
         window.location = $(this).attr('url');
         return false;
