@@ -43,11 +43,13 @@ $(document).ready(function () {
     })
 
     // play audiofile
-    timer = parseInt($('.story-node-audio').data('timer'));
-    console.log(timer);
-    setTimeout(function() {
-        $('.story-node-audio').trigger('play');
-    }, timer);
+    if ($('.story-node-audio').length) {
+        timer = parseInt($('.story-node-audio').data('timer'));
+        console.log(timer);
+        setTimeout(function () {
+            $('.story-node-audio').trigger('play');
+        }, timer);
+    }
 
     // story typewriter
     var timeBetweenLetters = 25,
@@ -75,7 +77,7 @@ $(document).ready(function () {
             if (name.length == 0) {
                 console.log('Done printing the title.');
                 clearInterval(nameTimerInt);
-                setTimeout(function(){
+                setTimeout(function () {
                     textTimer(0);
                 }, timeBetweenParagraphs);
                 return;
@@ -98,7 +100,7 @@ $(document).ready(function () {
                 if (textP.length == 0) {
                     console.log('Done printing a text paragraph.');
                     clearInterval(textTimerInt);
-                    setTimeout(function(){
+                    setTimeout(function () {
                         textTimer(i + 1);
                     }, timeBetweenParagraphs);
                     return;
