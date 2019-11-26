@@ -11,6 +11,8 @@ $(document).ready(function () {
     var stl_viewer = new StlViewer(
         document.getElementById("stl_cont"), {
             auto_rotate: true,
+            camerax: 45,
+            cameray: 45,
             models: [{
                 filename: "Wand.stl"
                 }]
