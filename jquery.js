@@ -10,10 +10,10 @@ $(document).ready(function () {
     // stl_viewer
     var stl_viewer = new StlViewer(
         document.getElementById("stl_cont"), {
-            auto_rotate: true,
+            auto_rotate: false,
             bgcolor: "white",
-            camerax: 45,
-            cameray: 45,
+            camerax: 0,
+            cameray: 0,
             models: [{
                 filename: "Mainsion.stl"
                 }]
