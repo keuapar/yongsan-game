@@ -20,6 +20,7 @@ $(document).ready(function () {
         }
     );
     stl_viewer.rotate(1, 0, 0, -1.57);
+    stl_viewer.set_auto_rotate(true);
 
     // scroll to choices
     var once = true;
