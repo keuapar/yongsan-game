@@ -11,7 +11,7 @@ $(document).ready(function () {
     var stl_viewer = new StlViewer(
         document.getElementById("stl_cont"), {
             models: [{
-                filename: "Wand.stl"
+                filename: "Wand.stl", auto_rotate: true
                 }]
         }
     );
