@@ -10,17 +10,10 @@ $(document).ready(function () {
     // stl_viewer
     if ($('#stl_cont').length) {
         var stl_viewer = new StlViewer(
-            document.getElementById("stl_cont"), {
-                auto_rotate: false,
-                bgcolor: "white",
-                camerax: 0,
-                cameray: 0,
-                models: [{
-                    id: 55,
-                    filename: "house1.stl"
-                }]
+            $('#stl_cont'), {
             }
         );
+        stl_viewer.add_model({id: 55, filename: 'house1.stl'})
         console.log(JSON.stringify(stl_viewer.get_model_info(55)))
     }
 
