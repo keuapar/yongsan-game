@@ -21,6 +21,7 @@ $(document).ready(function () {
                 }]
             }
         );
+        console.log(JSON.stringify(stl_viewer.get_model_info(0)))
     }
 
     // scroll to choices
