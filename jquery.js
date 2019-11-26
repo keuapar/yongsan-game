@@ -13,8 +13,8 @@ $(document).ready(function () {
             $('#stl_cont'), {
             }
         );
-        stl_viewer.add_model({id: 55, filename: 'house1.stl'})
-        console.log(JSON.stringify(stl_viewer.get_model_info(55)))
+        stl_viewer.add_model({id: 55, filename: 'house1.stl'});
+        console.log(JSON.stringify(stl_viewer.get_model_info(55)));
     }
 
     // scroll to choices
