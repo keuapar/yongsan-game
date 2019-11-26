@@ -16,12 +16,12 @@ $(document).ready(function () {
                 camerax: 0,
                 cameray: 0,
                 models: [{
-                    id: 1,
+                    id: 0,
                     filename: "house1.stl"
                 }]
             }
         );
-        console.log(JSON.stringify(stl_viewer.get_model_info(1)))
+        console.log(JSON.stringify(stl_viewer.get_model_info(0)))
     }
 
     // scroll to choices
@@ -71,7 +71,6 @@ $(document).ready(function () {
     // play audiofile
     if ($('.story-node-audio').length) {
         timer = parseInt($('.story-node-audio').data('timer'));
-        console.log(timer);
         setTimeout(function () {
             $('.story-node-audio').trigger('play');
         }, timer);
