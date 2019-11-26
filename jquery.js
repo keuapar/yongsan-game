@@ -7,6 +7,15 @@ $(document).ready(function () {
     $('.line1').fadeIn(1000).removeClass('hidden');
     */
 
+    // stl_viewer
+    var stl_viewer = new StlViewer(
+        document.getElementById("stl_cont"), {
+            models: [{
+                filename: "Wand.stl"
+                }]
+        }
+    );
+
     // scroll to choices
     var once = true;
     $(window).scroll(function () {
