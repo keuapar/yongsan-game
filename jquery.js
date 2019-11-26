@@ -14,7 +14,7 @@ $(document).ready(function () {
             camerax: 45,
             cameray: 45,
             models: [{
-                filename: "Wand.stl"
+                filename: "Vanderbilt.stl"
                 }]
         }
     );
