@@ -16,12 +16,12 @@ $(document).ready(function () {
                 camerax: 0,
                 cameray: 0,
                 models: [{
-                    id: 0,
+                    id: 55,
                     filename: "house1.stl"
                 }]
             }
         );
-        console.log(JSON.stringify(stl_viewer.get_model_info(0)))
+        console.log(JSON.stringify(stl_viewer.get_model_info(55)))
     }
 
     // scroll to choices
