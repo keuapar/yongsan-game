@@ -10,8 +10,9 @@ $(document).ready(function () {
     // stl_viewer
     var stl_viewer = new StlViewer(
         document.getElementById("stl_cont"), {
+            auto_rotate: true,
             models: [{
-                filename: "Wand.stl", auto_rotate: true
+                filename: "Wand.stl"
                 }]
         }
     );
