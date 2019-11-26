@@ -15,11 +15,11 @@ $(document).ready(function () {
             camerax: 0,
             cameray: 0,
             models: [{
-                id: 1, filename: "Mainsion.stl"
+                id: 0, filename: "Mainsion.stl"
                 }]
         }
     );
-    stl_viewer.rotate(1, 0, 0, -1.57);
+    stl_viewer.rotate(0, 0, 0, -1.57); // first number is ID
     stl_viewer.set_auto_rotate(true);
 
     // scroll to choices
