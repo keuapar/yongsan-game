@@ -11,6 +11,7 @@ $(document).ready(function () {
     var stl_viewer = new StlViewer(
         document.getElementById("stl_cont"), {
             auto_rotate: false,
+            bgcolor: "white",
             camerax: 45,
             cameray: 45,
             models: [{
