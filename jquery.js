@@ -12,7 +12,7 @@ $(document).ready(function () {
         document.getElementById("stl_cont"), {
             auto_rotate: false,
             bgcolor: "white",
-            camerax: 0,
+            camerax: 45,
             cameray: 0,
             models: [{
                 filename: "Mainsion.stl"
