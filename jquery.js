@@ -14,12 +14,12 @@ $(document).ready(function () {
             bgcolor: "white",
             camerax: 0,
             cameray: 0,
-            cameraz: 120,
             models: [{
-                filename: "Mainsion.stl"
+                id: 1, filename: "Mainsion.stl"
                 }]
         }
     );
+    stl_viewer.rotate(1, 0, 0, -1.57);
 
     // scroll to choices
     var once = true;
