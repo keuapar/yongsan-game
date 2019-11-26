@@ -8,18 +8,20 @@ $(document).ready(function () {
     */
 
     // stl_viewer
-    var stl_viewer = new StlViewer(
-        document.getElementById("stl_cont"), {
-            auto_rotate: false,
-            bgcolor: "white",
-            camerax: 0,
-            cameray: 0,
-            models: [{
-                id: 0, filename: "Mainsion.stl"
+    if ($('#stl_cont').length) {
+        var stl_viewer = new StlViewer(
+            document.getElementById("stl_cont"), {
+                auto_rotate: false,
+                bgcolor: "white",
+                camerax: 0,
+                cameray: 0,
+                models: [{
+                    id: 0,
+                    filename: "Mainsion.stl"
                 }]
-        }
-    );
-    // stl_viewer.rotate(0, 0, 0, -1.57); // first number is ID
+            }
+        );
+    }
 
     // scroll to choices
     var once = true;
