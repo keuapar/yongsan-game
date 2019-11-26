@@ -19,7 +19,7 @@ $(document).ready(function () {
                 }]
         }
     );
-    stl_viewer.rotate(0, 0, 0, -1.57); // first number is ID
+    // stl_viewer.rotate(0, 0, 0, -1.57); // first number is ID
 
     // scroll to choices
     var once = true;
