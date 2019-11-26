@@ -13,7 +13,8 @@ $(document).ready(function () {
             auto_rotate: false,
             bgcolor: "white",
             camerax: 45,
-            cameray: 0,
+            cameray: 45,
+            cameraz: 45,
             models: [{
                 filename: "Mainsion.stl"
                 }]
