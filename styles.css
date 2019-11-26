@@ -266,3 +266,8 @@ a {
     font-size: 2em;
     color: var(--white);
 }
+
+#stl_cont {
+    height: 500px;
+    width: 500px;
+}
