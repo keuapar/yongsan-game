@@ -17,7 +17,7 @@ $(document).ready(function () {
                 cameray: 0,
                 models: [{
                     id: 0,
-                    filename: "Mainsion.stl"
+                    filename: "house1.stl"
                 }]
             }
         );
