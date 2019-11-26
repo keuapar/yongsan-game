@@ -10,10 +10,20 @@
     <meta name="description" content="Yongsan Game">
     <meta name="author" content="YongsanLegacy">
     <link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|Lato&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script type="text/javascript" src="jquery.js"></script>
+    <script src="stl_viewer.min.js"></script>
+    <script>
+        var stl_viewer = new StlViewer(
+            document.getElementById("stl_cont"), {
+                models: [{
+                    filename: "house.stl"
+                }]
+            }
+        );
+    </script>
 
 </head>
 
@@ -45,6 +55,8 @@
         <p class="map-button-text">MAP</p>
     </div>
     <div class="map">
-        <p>THERE WILL BE A MAP HERE</p>
+        <div id="stl_cont"></div>
     </div>
-</body></html>
+</body>
+
+</html>
