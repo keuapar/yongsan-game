@@ -10,7 +10,7 @@ $(document).ready(function () {
     // stl_viewer
     var stl_viewer = new StlViewer(
         document.getElementById("stl_cont"), {
-            auto_rotate: true,
+            auto_rotate: false,
             camerax: 45,
             cameray: 45,
             models: [{
