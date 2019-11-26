@@ -20,7 +20,6 @@ $(document).ready(function () {
         }
     );
     stl_viewer.rotate(0, 0, 0, -1.57); // first number is ID
-    stl_viewer.set_auto_rotate(true);
 
     // scroll to choices
     var once = true;
