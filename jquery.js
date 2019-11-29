@@ -22,6 +22,7 @@ $(document).ready(function () {
                 scrollTop: bottom
             }, 2000);
         }
+        fastPrint();
     });
 
     // start game
@@ -49,7 +50,7 @@ $(document).ready(function () {
         }
     })
 
-    // play audiofile
+    // play audiofile with delay
     if ($('.story-node-audio').length) {
         timer = parseInt($('.story-node-audio').data('timer'));
         var audioPlay = setTimeout(function () {
@@ -57,7 +58,7 @@ $(document).ready(function () {
         }, timer);
     }
 
-    // display image
+    // display image with delay
     if ($('.story-node-image').length) {
         timerImage = parseInt($('.story-node-image').data('timer'));
         var imageDisplay = setTimeout(function () {
