@@ -251,12 +251,116 @@ a {
     background-color: var(--blackgrey);
     visibility: hidden;
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50% 1fr 1fr;
+    grid-template-areas:
+        "stl stl stl"
+        "med1 med2 med3"
+        "med4 med5 med6";
     place-items: center;
-    font-size: 2em;
     color: var(--white);
 }
 
+.medailon {
+    transform-style: preserve-3d;
+    perspective: 500px;
+    transition: .5s;
+    min-height: 90%;
+    min-width: 80%;
+}
+
+.medailon:hover .med-front {
+    transform: rotateY(-180deg);
+}
+
+.medailon:hover .med-back {
+    transform: rotateY(0deg);
+}
+
+.med-front {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+}
+
+.med-image {
+    background-size: cover;
+    height: 80%;
+}
+
+.med-name {
+    text-align: center;
+}
+
+.med-back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--greyish);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: .5s;
+    text-align: center;
+    overflow-y: auto;
+}
+
+.med1 {
+    grid-area: med1;
+}
+
+.med1 .med-image {
+    background-image: url(/images/med1.png);
+}
+
+.med2 {
+    grid-area: med2;
+}
+
+.med2 .med-image {
+    background-image: url(/images/med2.png);
+}
+
+.med3 {
+    grid-area: med3;
+}
+
+.med3 .med-image {
+    background-image: url(/images/med3.png);
+}
+
+.med4 {
+    grid-area: med4;
+}
+
+.med4 .med-image {
+    background-image: url(/images/med4.png);
+}
+
+.med5 {
+    grid-area: med5;
+}
+
+.med5 .med-image {
+    background-image: url(/images/med5.png);
+}
+
+.med6 {
+    grid-area: med6;
+}
+
+.med6 .med-image {
+    background-image: url(/images/med6.png);
+}
+
 #stl_cont {
-    height: 500px;
-    width: 500px;
+    grid-area: stl;
 }

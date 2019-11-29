@@ -4,6 +4,9 @@ $(document).ready(function () {
     if ($('#stl_cont').length) {
         var stl_viewer = new StlViewer(
             $('#stl_cont'), {
+                models: [{
+                    filename: 'house1.stl'
+                }]
             }
         );
         //stl_viewer.add_model({id: 55, filename: 'house1.stl'});

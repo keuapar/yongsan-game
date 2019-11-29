@@ -52,14 +52,17 @@ $(document).ready(function () {
 
     // play audiofile with delay
     if ($('.story-node-audio').length) {
+        var audioPlayed = false;
         timer = parseInt($('.story-node-audio').data('timer'));
         var audioPlay = setTimeout(function () {
             $('.story-node-audio').trigger('play');
+            audioPlayed = true;
         }, timer);
     }
 
     // display image with delay
     if ($('.story-node-image').length) {
+        var imageDisplayed = false;
         timerImage = parseInt($('.story-node-image').data('timer'));
         var imageDisplay = setTimeout(function () {
             $('.story-node-image').css({
@@ -67,6 +70,7 @@ $(document).ready(function () {
             }).animate({
                 opacity: 1
             }, 300);
+            imageDisplayed = true;
         }, timerImage);
     }
 
@@ -84,19 +88,21 @@ $(document).ready(function () {
         choice = '';
 
         // play audio immediately
-        if ($('.story-node-audio').length) {
+        if ($('.story-node-audio').length && audioPlayed == false) {
             clearTimeout(audioPlay);
             $('.story-node-audio').trigger('play');
+            audioPlayed = true;
         }
 
         // display image immediately
-        if ($('.story-node-image').length) {
+        if ($('.story-node-image').length && imageDisplayed == false) {
             clearTimeout(imageDisplay);
             $('.story-node-image').css({
                 visibility: 'visible',
             }).animate({
                 opacity: 1
             }, 300);
+            imageDisplayed = true;
         }
     }
 
