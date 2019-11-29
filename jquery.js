@@ -7,16 +7,6 @@ $(document).ready(function () {
     $('.line1').fadeIn(1000).removeClass('hidden');
     */
 
-    // stl_viewer
-    if ($('#stl_cont').length) {
-        var stl_viewer = new StlViewer(
-            $('#stl_cont'), {
-            }
-        );
-        stl_viewer.add_model({id: 55, filename: 'house1.stl'});
-        console.log(JSON.stringify(stl_viewer.get_model_info(55)));
-    }
-
     // scroll to choices
     var once = true;
     $(window).scroll(function () {
@@ -36,9 +26,7 @@ $(document).ready(function () {
 
     // start game
     $('.GO-button').click(function () {
-        // creating cookies
-        Cookies.set('feeling', '-');
-        Cookies.set('door', '-')
+        // creating cookies no need
         // start game
         window.location = $(this).attr('url');
         return false;
@@ -64,13 +52,55 @@ $(document).ready(function () {
     // play audiofile
     if ($('.story-node-audio').length) {
         timer = parseInt($('.story-node-audio').data('timer'));
-        setTimeout(function () {
+        var audioPlay = setTimeout(function () {
             $('.story-node-audio').trigger('play');
         }, timer);
     }
 
+    // display image
+    if ($('.story-node-image').length) {
+        timerImage = parseInt($('.story-node-image').data('timer'));
+        var imageDisplay = setTimeout(function () {
+            $('.story-node-image').css({
+                visibility: 'visible',
+            }).animate({
+                opacity: 1
+            }, 300);
+        }, timerImage);
+    }
+
+    // called onclick from story typewriter
+    function fastPrint() {
+        clearInterval(nameTimerInt);
+        $('.story-node-name').append(name);
+        name = '';
+        var i;
+        for (i = 0; i < text.length; i++) {
+            $('.story-node-text-p').eq(i).append(text[i]);
+            text[i] = '';
+        }
+        $('.story-node-choice').append(choice);
+        choice = '';
+
+        // play audio immediately
+        if ($('.story-node-audio').length) {
+            clearTimeout(audioPlay);
+            $('.story-node-audio').trigger('play');
+        }
+
+        // display image immediately
+        if ($('.story-node-image').length) {
+            clearTimeout(imageDisplay);
+            $('.story-node-image').css({
+                visibility: 'visible',
+            }).animate({
+                opacity: 1
+            }, 300);
+        }
+    }
+
     // story typewriter
-    var timeBetweenLetters = 25,
+    var timeBetweenLetters = 20,
         timeBetweenParagraphs = 500;
 
     if ($('.story').length) {
@@ -90,6 +120,10 @@ $(document).ready(function () {
 
         // print the story node name, letter by letter
         var nameTimerInt = setInterval(function () {
+
+            // on-click, fast print everything
+            $(document).click(fastPrint);
+
             $('.story-node-name').append(name[0]);
             name = name.substring(1);
             if (name.length == 0) {
@@ -103,19 +137,19 @@ $(document).ready(function () {
         }, timeBetweenLetters);
 
         // print story paragraphs, letter by letter
-        var numberOfTexts = text.length;
         var textTimer = function (i) {
-            if (i == numberOfTexts) {
+            if (i == text.length) {
                 choiceTimer();
                 return;
             }
             var currentP = $('.story-node-text-p').eq(i);
-            var textP = text[i];
 
             var textTimerInt = setInterval(function () {
-                currentP.append(textP[0]);
-                textP = textP.substring(1);
-                if (textP.length == 0) {
+                if (text[i].length > 0) {
+                    currentP.append(text[i][0]);
+                }
+                text[i] = text[i].substring(1);
+                if (text[i].length == 0) {
                     console.log('Done printing a text paragraph.');
                     clearInterval(textTimerInt);
                     setTimeout(function () {
