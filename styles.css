@@ -292,6 +292,7 @@ a {
 
 .med-image {
     background-size: cover;
+    background-position: center;
     height: 80%;
 }
 
@@ -363,4 +364,6 @@ a {
 
 #stl_cont {
     grid-area: stl;
+    min-height: 100%;
+    min-width: 100%;
 }
