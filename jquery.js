@@ -104,6 +104,13 @@ $(document).ready(function () {
             }, 300);
             imageDisplayed = true;
         }
+
+        // display the arrow
+        setTimeout(function () {
+            $('.far').css({
+                opacity: 1
+            });
+        }, 2000);
     }
 
     // story typewriter
@@ -173,6 +180,11 @@ $(document).ready(function () {
                 $('.story-node-choice').append(choice[0]);
                 choice = choice.substring(1);
                 if (choice.length == 0) {
+                    setTimeout(function () {
+                        $('.far').css({
+                            opacity: 1
+                        });
+                    }, 2000);
                     console.log('Done printing the choice.');
                     clearInterval(choiceTimerInt);
                     return;

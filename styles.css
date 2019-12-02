@@ -136,6 +136,8 @@ a {
 }
 .far {
     padding-bottom: 3%;
+    opacity: 0;
+    transition: 0.5s;
 }
 
 .story-node-image {
@@ -382,8 +384,7 @@ a {
     }
     .story-node-text-p {
         z-index: 1;
-        max-width: 60%;
-        padding: 10px 20%;
+        width: 60vw;
     }
     .story-node-image {
         z-index: 0;
