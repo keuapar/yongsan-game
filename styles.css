@@ -106,6 +106,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: top;
+    align-items: center;
 }
 
 .story-node-name {
@@ -127,11 +128,14 @@ a {
 
 .story-node-choice {
     padding-top: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 1%;
     max-width: 65%;
     text-align: center;
     align-self: center;
     font-size: 1.5em;
+}
+.far {
+    padding-bottom: 3%;
 }
 
 .story-node-image {
@@ -219,6 +223,7 @@ a {
     left: 5%;
     background-color: var(--white);
     padding: 10px;
+    text-align: center;
     box-shadow: 2px 2px 2px;
     transition: 0.3s;
 }
@@ -368,4 +373,35 @@ a {
     grid-area: stl;
     min-height: 100%;
     min-width: 100%;
+}
+
+@media only screen and (min-width: 768px){
+    .story-node-text {
+        display: flex;
+        flex-direction: column;
+    }
+    .story-node-text-p {
+        z-index: 1;
+        max-width: 60%;
+        padding: 10px 20%;
+    }
+    .story-node-image {
+        z-index: 0;
+        position: absolute;
+        align-self: center;
+    }
+    .story-node-choice {
+        z-index: 1;
+    }
+    .far {
+        z-index: 1;
+    }
+    .map {
+        grid-template-columns: 50% 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas:
+            "stl med1 med2"
+            "stl med3 med4"
+            "stl med5 med6";
+    }
 }
