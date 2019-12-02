@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Special Elite', cursive;
+    font-family: 'Nanum Gothic', sans-serif;
 
     /* custom variables - color */
     --blackish: rgb(30, 30, 30);
@@ -63,8 +63,6 @@ a {
     grid-area: button;
     font-size: 1.3em;
     text-align: center;
-    max-width: 50px;
-    max-height: 25px;
     animation: fadeInGO 3.5s;
     transition: 0.3s;
 }
@@ -303,6 +301,7 @@ a {
 
 .med-name {
     text-align: center;
+    padding-top: 3px;
 }
 
 .med-back {
