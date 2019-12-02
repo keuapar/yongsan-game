@@ -226,7 +226,7 @@ a {
 }
 
 .choice p {
-    max-width: 50%;
+    max-width: 70vw;
     text-align: center;
 }
 
@@ -351,6 +351,7 @@ a {
     background-size: cover;
     background-position: center;
     height: 80%;
+    filter: grayscale(80%);
 }
 
 .med-name {

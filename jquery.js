@@ -18,6 +18,12 @@ $(document).ready(function () {
         Cookies.set('64', 'False');
         Cookies.set('65', 'False');
         Cookies.set('67', 'False');
+        Cookies.set('med1', 'Locked');
+        Cookies.set('med2', 'Locked');
+        Cookies.set('med3', 'Locked');
+        Cookies.set('med4', 'Locked');
+        Cookies.set('med5', 'Locked');
+        Cookies.set('med6', 'Locked');
         // start game
         window.location = $(this).attr('url');
         return false;
@@ -34,6 +40,12 @@ $(document).ready(function () {
         Cookies.set('64', 'False');
         Cookies.set('65', 'False');
         Cookies.set('67', 'False');
+        Cookies.set('med1', 'Locked');
+        Cookies.set('med2', 'Locked');
+        Cookies.set('med3', 'Locked');
+        Cookies.set('med4', 'Locked');
+        Cookies.set('med5', 'Locked');
+        Cookies.set('med6', 'Locked');
         // start game
         window.location = $(this).attr('url');
         return false;
@@ -73,6 +85,12 @@ $(document).ready(function () {
             Cookies.set('64', 'False');
             Cookies.set('65', 'False');
             Cookies.set('67', 'False');
+            Cookies.set('med1', 'Locked');
+            Cookies.set('med2', 'Locked');
+            Cookies.set('med3', 'Locked');
+            Cookies.set('med4', 'Locked');
+            Cookies.set('med5', 'Locked');
+            Cookies.set('med6', 'Locked');
             console.log('Cookies have been reset');
             window.location = $(this).attr('url');
             return false;
