@@ -135,7 +135,7 @@ a {
     font-size: 1.5em;
 }
 .far {
-    padding-bottom: 3%;
+    padding-bottom: 5%;
     opacity: 0;
     transition: 0.5s;
 }
@@ -390,6 +390,7 @@ a {
         z-index: 0;
         position: absolute;
         align-self: center;
+        bottom: 10%;
     }
     .story-node-choice {
         z-index: 1;
