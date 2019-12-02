@@ -115,7 +115,7 @@ a {
 
 .logo:hover, .logo:active {
     cursor: pointer;
-    max-width: 90px;
+    max-width: 100px;
 }
 
 @keyframes fadeInLogo {
