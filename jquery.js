@@ -7,6 +7,43 @@ $(document).ready(function () {
     $('.line1').fadeIn(1000).removeClass('hidden');
     */
 
+    // start game
+    $('.titleEN').click(function () {
+        // creating cookies
+        Cookies.set('lang', 'EN');
+        Cookies.set('6', 'False');
+        Cookies.set('8', 'False');
+        Cookies.set('62', 'False');
+        Cookies.set('63', 'False');
+        Cookies.set('64', 'False');
+        Cookies.set('65', 'False');
+        Cookies.set('67', 'False');
+        // start game
+        window.location = $(this).attr('url');
+        return false;
+        // blackout the screen
+    });
+    // start game
+    $('.titleKR').click(function () {
+        // creating cookies
+        Cookies.set('lang', 'KR');
+        Cookies.set('6', 'False');
+        Cookies.set('8', 'False');
+        Cookies.set('62', 'False');
+        Cookies.set('63', 'False');
+        Cookies.set('64', 'False');
+        Cookies.set('65', 'False');
+        Cookies.set('67', 'False');
+        // start game
+        window.location = $(this).attr('url');
+        return false;
+        // blackout the screen
+    });
+    // go to YongsanLegacy.org
+    $('.logo').click(function () {
+        window.open('https://www.yongsanlegacy.org');
+    })
+
     // scroll to choices
     var once = true;
     $(window).scroll(function () {
@@ -25,21 +62,17 @@ $(document).ready(function () {
         fastPrint();
     });
 
-    // start game
-    $('.GO-button').click(function () {
-        // creating cookies no need
-        // start game
-        window.location = $(this).attr('url');
-        return false;
-        // blackout the screen
-    });
-
     // choice redirect (put url as div parameter)
     $('.choice').click(function () {
         // save the choice Cookie
         if ($(this).attr('data-cookiename') == 'reset') {
             Cookies.set('6', 'False');
             Cookies.set('8', 'False');
+            Cookies.set('62', 'False');
+            Cookies.set('63', 'False');
+            Cookies.set('64', 'False');
+            Cookies.set('65', 'False');
+            Cookies.set('67', 'False');
             console.log('Cookies have been reset');
             window.location = $(this).attr('url');
             return false;
