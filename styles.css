@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Special Elite', cursive;
 
     /* custom variables - color */
     --blackish: rgb(30, 30, 30);
@@ -37,7 +37,6 @@ a {
 
 .title {
     grid-area: title;
-    font-family: 'Bubblegum Sans', cursive;
     font-size: 2em;
     animation: fadeInTitle 1.5s;
     text-align: center;
@@ -110,7 +109,6 @@ a {
 }
 
 .story-node-name {
-    font-family: 'Bubblegum Sans', cursive;
     padding-top: 10%;
     padding-bottom: 5%;
     max-width: 65%;
@@ -226,7 +224,7 @@ a {
 }
 
 .map-button-start {
-    animation: fadeInMap 13s;
+    animation: fadeInMap 8s;
 }
 @keyframes fadeInMap {
     0% {opacity: 0;}
@@ -265,8 +263,8 @@ a {
     transform-style: preserve-3d;
     perspective: 500px;
     transition: .5s;
-    min-height: 90%;
-    min-width: 80%;
+    min-height: 95%;
+    min-width: 95%;
 }
 
 .medailon:hover .med-front {
@@ -310,8 +308,12 @@ a {
     backface-visibility: hidden;
     transform: rotateY(180deg);
     transition: .5s;
-    text-align: center;
     overflow-y: auto;
+}
+
+.med-back p {
+    text-align: center;
+    padding: 3%;
 }
 
 .med1 {
