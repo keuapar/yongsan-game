@@ -80,6 +80,7 @@ $(document).ready(function () {
                 scrollTop: bottom
             }, 2000);
         }
+        // print everything upon scrolling
         fastPrint();
     });
 
@@ -183,26 +184,28 @@ $(document).ready(function () {
 
     // play audiofile with delay
     if ($('.story-node-audio').length) {
-        var audioPlayed = false;
-        timer = parseInt($('.story-node-audio').data('timer'));
-        var audioPlay = setTimeout(function () {
-            $('.story-node-audio').trigger('play');
-            audioPlayed = true;
-        }, timer);
+        $('.story-node-audio').each(function () {
+            var timerAudio = parseInt($(this).data('timer'));
+            var audio = $(this);
+            setTimeout(function () {
+                audio.trigger('play');
+            }, timerAudio);
+        });
     }
 
     // display image with delay
     if ($('.story-node-image').length) {
-        var imageDisplayed = false;
-        timerImage = parseInt($('.story-node-image').data('timer'));
-        var imageDisplay = setTimeout(function () {
-            $('.story-node-image').css({
-                visibility: 'visible',
-            }).animate({
-                opacity: 1
-            }, 300);
-            imageDisplayed = true;
-        }, timerImage);
+        $('.story-node-image').each(function () {
+            var timerImage = parseInt($(this).data('timer'));
+            var image = $(this);
+            setTimeout(function () {
+                image.css({
+                    visibility: 'visible',
+                }).animate({
+                    opacity: 1
+                }, 300);
+            }, timerImage);
+        });
     }
 
     // called onclick from story typewriter
@@ -219,29 +222,18 @@ $(document).ready(function () {
         choice = '';
 
         // play audio immediately
-        if ($('.story-node-audio').length && audioPlayed == false) {
-            clearTimeout(audioPlay);
+        if ($('.story-node-audio').length) {
             $('.story-node-audio').trigger('play');
-            audioPlayed = true;
         }
 
         // display image immediately
-        if ($('.story-node-image').length && imageDisplayed == false) {
-            clearTimeout(imageDisplay);
+        if ($('.story-node-image').length) {
             $('.story-node-image').css({
                 visibility: 'visible',
             }).animate({
                 opacity: 1
             }, 300);
-            imageDisplayed = true;
         }
-
-        // display the arrow
-        setTimeout(function () {
-            $('.fa-arrow-alt-circle-down').css({
-                opacity: 1
-            });
-        }, 2000);
     }
 
     // story typewriter
@@ -315,7 +307,7 @@ $(document).ready(function () {
                         $('.fa-arrow-alt-circle-down').css({
                             opacity: 1
                         });
-                    }, 2000);
+                    }, 500);
                     console.log('Done printing the choice.');
                     clearInterval(choiceTimerInt);
                     return;

@@ -168,6 +168,8 @@ a {
 .story-node-text {
     z-index: 1;
     padding: 10px 10vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .story-node-text-p {
@@ -190,14 +192,27 @@ a {
     transition: 0.5s;
 }
 
-.story-node-image {
+.story-node-images {
     z-index: 0;
     position: absolute;
     align-self: center;
-    bottom: 10%;
+    bottom: 10vh;
     max-width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-node-image {
     visibility: hidden;
     opacity: 0;
+    width: 100%;
+    max-height: auto;
+}
+
+.story-node-image-in {
+    max-width: 250px;
+    align-self: center;
 }
 
 .choice {
