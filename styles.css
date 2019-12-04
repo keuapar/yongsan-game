@@ -183,7 +183,7 @@ a {
     align-self: center;
     font-size: 1.5em;
 }
-.far {
+.fa-arrow-alt-circle-down {
     z-index: 1;
     padding-bottom: 5%;
     opacity: 0;
@@ -301,6 +301,23 @@ a {
     background-color: var(--greyish);
 }
 
+.map-animation {
+    animation: mapArrow 10s;
+}
+@keyframes mapArrow {
+    0% {opacity: 0.1;}
+    10% {opacity: 1;}
+    20% {opacity: 0.1;}
+    30% {opacity: 1;}
+    40% {opacity: 0.1;}
+    50% {opacity: 1;}
+    60% {opacity: 0.1;}
+    70% {opacity: 1;}
+    80% {opacity: 0.1;}
+    90% {opacity: 1;}
+    100% {opacity: 0.1;}
+}
+
 .map {
     z-index: 5;
     position: fixed;
@@ -330,18 +347,6 @@ a {
     min-width: 95%;
 }
 
-.locked {
-
-}
-
-.medailon:hover .med-front .unlocked, .medailon:active .med-front .unlocked {
-    transform: rotateY(-180deg);
-}
-
-.medailon:hover .med-back .unlocked, .medailon:active .med-abck .unlocked {
-    transform: rotateY(0deg);
-}
-
 .med-front {
     height: 100%;
     width: 100%;
@@ -365,6 +370,7 @@ a {
 .med-name {
     text-align: center;
     padding-top: 3px;
+    color: var(--whitegrey);
 }
 
 .med-back {
@@ -383,6 +389,22 @@ a {
 .med-back p {
     text-align: center;
     padding: 3%;
+}
+
+.unlocked .med-name {
+    color: var(--white);
+}
+
+.unlocked .med-image {
+    filter: none;
+}
+
+.unlocked:hover .med-front, .unlocked:active .med-front {
+    transform: rotateY(-180deg);
+}
+
+.unlocked:hover .med-back, .unlocked:active .med-back {
+    transform: rotateY(0deg);
 }
 
 .med1 {

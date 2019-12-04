@@ -6,28 +6,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yongsan Game</title>
-    <meta name="description" content="Yongsan Game">
+    <title>Samgakji Stories</title>
+    <meta name="description" content="Samgakji Stories">
     <meta name="author" content="YongsanLegacy">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo|Roboto&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script type="text/javascript" src="jquery.js"></script>
-
+    <script src="https://kit.fontawesome.com/ab07fc2d6f.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="story">
+        <img class="story-node-image" data-timer="14000" alt="" src="images/2_img.png">
         <p class="story-node-name">Explore</p>
         <div class="story-node-text">
             <audio class="story-node-audio" data-timer="1500" src="audio/2&3_heartbeat_sound%20_effect.mp3"></audio>
             <p class="story-node-text-p">You decide there is nothing good about this situation. Your heart beats furiously in your chest almost as hard as your brain beats against your skull. The faster you figure out what has happened, the sooner you can get yourself out.</p>
             <p class="story-node-text-p">You try to stand and luckily it is only your hands that are bound by the zipties. It is dark, but your eyes soon adjust to the light and you look around the room.</p>
             <p class="story-node-text-p">You fumble around the room and brace yourself up with the table in the corner of the tiny room. Your hands touch the smooth wood and meet with some lacerations, instinctively your fingers trace the words “HE WILL ALWAYS FIND YOU”</p>
-            <img class="story-node-image" data-timer="14000" alt="" src="images/2_img.png">
         </div>
         <p class="story-node-choice">Suddenly,</p>
+        <i class="far fa-arrow-alt-circle-down"></i>
     </div>
     <div class="choice-screen choice-screen-1">
         <div class="choice-screen-1-1 choice" url="4.html">
@@ -38,6 +39,62 @@
         <p class="map-button-text">MAP</p>
     </div>
     <div class="map">
-        <p>THERE WILL BE A MAP HERE</p>
+        <div id="stl_cont"></div>
+        <div class="medailon med1 locked">
+            <div class="med-front">
+                <div class="med-image"></div>
+                <p class="med-name">[Play on to unlock]</p>
+            </div>
+            <div class="med-back">
+                <p>The owner of Won Daegutang started the business in 1979. The codfish hotpot filled with large chunks of codfish and intestines in a spicy broth balanced with water parsley and bean sprouts attracts both locals and soldiers.</p>
+            </div>
+        </div>
+        <div class="medailon med2 locked">
+            <div class="med-front">
+                <div class="med-image"></div>
+                <p class="med-name">[Play on to unlock]</p>
+            </div>
+            <div class="med-back">
+                <p>Park so geum (1914 - 1965) was a full-time painter and one of the most influential modernist. Although he didn’t formally receive art education in school, his skills won him numerous prizes. He predominantly used light gray color, to depict simple yet Korea-like themes in folklore sense.</p>
+            </div>
+        </div>
+        <div class="medailon med3 locked">
+            <div class="med-front">
+                <div class="med-image"></div>
+                <p class="med-name">[Play on to unlock]</p>
+            </div>
+            <div class="med-back">
+                <p>In the 1960s, artists gathered around Samgakji to earn money from copying masterpieces and exporting these commercial paintings. However, it did not last long as China and South East Asia join the market. Then, many Korean artists lost their market and moved away.</p>
+            </div>
+        </div>
+        <div class="medailon med4 locked">
+            <div class="med-front">
+                <div class="med-image"></div>
+                <p class="med-name">[Play on to unlock]</p>
+            </div>
+            <div class="med-back">
+                <p>U.S. army came to Yongsan Garrison in the 1950s. Soldiers from another side of the pacific brought Yongsan district diverse culture and entertainment.</p>
+            </div>
+        </div>
+        <div class="medailon med5 locked">
+            <div class="med-front">
+                <div class="med-image"></div>
+                <p class="med-name">[Play on to unlock]</p>
+            </div>
+            <div class="med-back">
+                <p>An elusive character rumoured to be the head of a prostitution ring in Samgakji. Stories say that you can see her 'girls' hanging around Gate 1 of the military base, waiting to catch their customer of the day. Sometimes these girls get caught by the authorities for illegally selling their services.</p>
+            </div>
+        </div>
+        <div class="medailon med6 locked">
+            <div class="med-front">
+                <div class="med-image"></div>
+                <p class="med-name">[Play on to unlock]</p>
+            </div>
+            <div class="med-back">
+                <p>The photo studio started in 1964. It’s a tiny studio but fully equipped with professional cameras and props. Many soldiers take family photos here or take pictures of themselves and ask artists to paint the portrait.</p>
+            </div>
+        </div>
     </div>
+    <script type="text/javascript" src="stl_viewer.min.js"></script>
+    <script type="text/javascript" src="stl.js"></script>
 </body></html>

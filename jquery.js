@@ -49,7 +49,7 @@ $(document).ready(function () {
         // start game
         window.location = $(this).attr('url');
         return false;
-        // blackout the screen
+        // blackout the screen NOPE
     });
     // go to YongsanLegacy.org
     $('.logo').click(function () {
@@ -58,13 +58,15 @@ $(document).ready(function () {
 
     // scroll to choices on scroll or on click of arrow
     var once = true;
-    $('.far').click(function () {
+    // on arrow-click
+    $('.fa-arrow-alt-circle-down').click(function () {
         once = false;
         var bottom = $('.choice-screen').offset().top + $('.choice-screen').outerHeight();
         $('html, body').animate({
             scrollTop: bottom
         }, 2000);
     })
+    // on scroll
     $(window).scroll(function () {
         var hT = $('.choice-screen').offset().top,
             hH = $('.choice-screen').outerHeight(),
@@ -81,7 +83,60 @@ $(document).ready(function () {
         fastPrint();
     });
 
-    // choice redirect (put url as div parameter)
+    // check for unlockable characters
+    if ($('.story').attr('data-med1') == 'Unlocked') {
+        Cookies.set('med1', 'Unlocked');
+        console.log('Chef unlocked!');
+    }
+    if ($('.story').attr('data-med2') == 'Unlocked') {
+        Cookies.set('med2', 'Unlocked');
+        console.log('Park Soo-Geun unlocked!');
+    }
+    if ($('.story').attr('data-med3') == 'Unlocked') {
+        Cookies.set('med3', 'Unlocked');
+        console.log('Samgakji artist unlocked!');
+    }
+    if ($('.story').attr('data-med4') == 'Unlocked') {
+        Cookies.set('med4', 'Unlocked');
+        console.log('American soldier unlocked!');
+    }
+    if ($('.story').attr('data-med5') == 'Unlocked') {
+        Cookies.set('med5', 'Unlocked');
+        console.log('Mama-san unlocked!');
+    }
+    if ($('.story').attr('data-med6') == 'Unlocked') {
+        Cookies.set('med6', 'Unlocked');
+        console.log('Photo studio owner unlocked!');
+    }
+
+    // color unlocked characters
+    if (Cookies.get('med1') == 'Unlocked') {
+        $('.med1').addClass('unlocked');
+        $('.med1 .med-name').text('Daegutang shop owner');
+    }
+    if (Cookies.get('med2') == 'Unlocked') {
+        $('.med2').addClass('unlocked');
+        $('.med2 .med-name').text('Park Soo-Geun');
+    }
+    if (Cookies.get('med3') == 'Unlocked') {
+        $('.med3').addClass('unlocked');
+        $('.med3 .med-name').text('Samgakji artist');
+    }
+    if (Cookies.get('med4') == 'Unlocked') {
+        $('.med4').addClass('unlocked');
+        $('.med4 .med-name').text('American soldier');
+    }
+    if (Cookies.get('med5') == 'Unlocked') {
+        $('.med5').addClass('unlocked');
+        $('.med5 .med-name').text('Mama-san');
+    }
+    if (Cookies.get('med6') == 'Unlocked') {
+        $('.med6').addClass('unlocked');
+        $('.med6 .med-name').text('Photo studio owner');
+    }
+
+
+    // .choice redirect (put url as div parameter)
     $('.choice').click(function () {
         // save the choice Cookie
         if ($(this).attr('data-cookiename') == 'reset') {
@@ -165,7 +220,7 @@ $(document).ready(function () {
 
         // display the arrow
         setTimeout(function () {
-            $('.far').css({
+            $('.fa-arrow-alt-circle-down').css({
                 opacity: 1
             });
         }, 2000);
@@ -239,7 +294,7 @@ $(document).ready(function () {
                 choice = choice.substring(1);
                 if (choice.length == 0) {
                     setTimeout(function () {
-                        $('.far').css({
+                        $('.fa-arrow-alt-circle-down').css({
                             opacity: 1
                         });
                     }, 2000);
