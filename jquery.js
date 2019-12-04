@@ -85,26 +85,44 @@ $(document).ready(function () {
 
     // check for unlockable characters
     if ($('.story').attr('data-med1') == 'Unlocked') {
+        if (Cookies.get('med1') == 'Locked') {
+            $('.map-button').addClass('map-animation');
+        }
         Cookies.set('med1', 'Unlocked');
         console.log('Chef unlocked!');
     }
     if ($('.story').attr('data-med2') == 'Unlocked') {
+        if (Cookies.get('med2') == 'Locked') {
+            $('.map-button').addClass('map-animation');
+        }
         Cookies.set('med2', 'Unlocked');
         console.log('Park Soo-Geun unlocked!');
     }
     if ($('.story').attr('data-med3') == 'Unlocked') {
+        if (Cookies.get('med3') == 'Locked') {
+            $('.map-button').addClass('map-animation');
+        }
         Cookies.set('med3', 'Unlocked');
         console.log('Samgakji artist unlocked!');
     }
     if ($('.story').attr('data-med4') == 'Unlocked') {
+        if (Cookies.get('med4') == 'Locked') {
+            $('.map-button').addClass('map-animation');
+        }
         Cookies.set('med4', 'Unlocked');
         console.log('American soldier unlocked!');
     }
     if ($('.story').attr('data-med5') == 'Unlocked') {
+        if (Cookies.get('med5') == 'Locked') {
+            $('.map-button').addClass('map-animation');
+        }
         Cookies.set('med5', 'Unlocked');
         console.log('Mama-san unlocked!');
     }
     if ($('.story').attr('data-med6') == 'Unlocked') {
+        if (Cookies.get('med6') == 'Locked') {
+            $('.map-button').addClass('map-animation');
+        }
         Cookies.set('med6', 'Unlocked');
         console.log('Photo studio owner unlocked!');
     }
