@@ -56,8 +56,15 @@ $(document).ready(function () {
         window.open('https://www.yongsanlegacy.org');
     })
 
-    // scroll to choices
+    // scroll to choices on scroll or on click of arrow
     var once = true;
+    $('.far').click(function () {
+        once = false;
+        var bottom = $('.choice-screen').offset().top + $('.choice-screen').outerHeight();
+        $('html, body').animate({
+            scrollTop: bottom
+        }, 2000);
+    })
     $(window).scroll(function () {
         var hT = $('.choice-screen').offset().top,
             hH = $('.choice-screen').outerHeight(),
