@@ -17,6 +17,7 @@ $(document).ready(function () {
         Cookies.set('63', 'False');
         Cookies.set('64', 'False');
         Cookies.set('65', 'False');
+        Cookies.set('66', 'False');
         Cookies.set('67', 'False');
         Cookies.set('med1', 'Locked');
         Cookies.set('med2', 'Locked');
@@ -39,6 +40,7 @@ $(document).ready(function () {
         Cookies.set('63', 'False');
         Cookies.set('64', 'False');
         Cookies.set('65', 'False');
+        Cookies.set('66', 'False');
         Cookies.set('67', 'False');
         Cookies.set('med1', 'Locked');
         Cookies.set('med2', 'Locked');
@@ -155,12 +157,47 @@ $(document).ready(function () {
     }
 
     if ($('.condition').length) {
-        switch ($('.condition').attr('data-condition')) {
-            case '22-8':
-                console.log('A conditional text has been displayed');
-                $('.condition').text('Now, you understand what the chains in the room were for and why Hae-Rin was so bruised.');
-                break;
-        }
+        $('.condition').each(function () {
+            var condition = $(this);
+            switch (condition.attr('data-condition')) {
+                case '22-8':
+                    if (Cookies.get('8') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('Now, you understand what the chains in the room were for and why Hae-Rin was so bruised.');
+                    }
+                    break;
+                case '33-6':
+                    if (Cookies.get('6') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('You are brought back to the house where it all began, but not without a lot of kicking and screaming. Hae-Rin gives you a sad smile as they put you back into that room and teach you what happens when you try to escape.');
+                    }
+                    break;
+                case '35-63':
+                    if (Cookies.get('63') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('You meet that girl again and you feel like screaming at her for conning you into this life, but she shrugs. “A girl has to eat,” she tells you. “And Mama pays well.”');
+                    }
+                    break;
+                case '35-66':
+                    if (Cookies.get('66') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('You meet that girl again and you feel like screaming at her for conning you into this life, but she shrugs. “Sometimes freedom requires a little sacrifice,” she tells you. “If you don’t think about the bad parts, everything else is pretty sweet.”');
+                    }
+                    break;
+                case '38-8':
+                    if (Cookies.get('8') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('“What’s your name? When I get out, I’ll get someone to save you. A smile touches the corners of her mouth. “I’m Hae-Rin. Good luck.”');
+                    }
+                    break;
+                case '58-6':
+                    if (Cookies.get('6') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('Si Won cowers and shoots you an apologetic look as the two men take you away. You are brought back to the house where it all began, but not without a lot of kicking and screaming. Hae-Rin gives you a sad smile as they put you back into that room and teach you what happens when you try to escape.');
+                    }
+                    break;
+            }
+        });
     }
 
 

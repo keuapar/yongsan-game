@@ -71,6 +71,43 @@ $(document).ready(function () {
                     }
                 );
                 break;
+            case 'house3OR5':
+                if (Cookies.get('6') == 'True') {
+                    console.log('The map will display');
+                    console.log('house5')
+                    var stl_viewer = new StlViewer(
+                        $('#stl_cont')[0], {
+                            models: {
+                                id: 55,
+                                filename: 'house5.stl',
+                                x: 0,
+                                y: 0,
+                                z: 0,
+                                display: 'smooth',
+                                rotationx: -1.5,
+                                rotationy: -0.2
+                            }
+                        }
+                    );
+                } else {
+                    console.log('The map will display');
+                    console.log('house3')
+                    var stl_viewer = new StlViewer(
+                        $('#stl_cont')[0], {
+                            models: {
+                                id: 55,
+                                filename: 'house3.stl',
+                                x: 0,
+                                y: 0,
+                                z: 0,
+                                display: 'smooth',
+                                rotationx: -1.5,
+                                rotationy: -0.2
+                            }
+                        }
+                    );
+                };
+                break;
             case 'city':
                 console.log('The map will display');
                 console.log($('#stl_cont').attr('data-map'));
