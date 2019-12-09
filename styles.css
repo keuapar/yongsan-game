@@ -16,6 +16,10 @@ body {
     --white: rgb(222, 222, 222);
 }
 
+em {
+    font-style: italic;
+}
+
 a {
     color: inherit;
     text-decoration: inherit;

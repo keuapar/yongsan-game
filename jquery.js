@@ -154,6 +154,15 @@ $(document).ready(function () {
         $('.med6 .med-name').text('Photo studio owner');
     }
 
+    if ($('.condition').length) {
+        switch ($('.condition').attr('data-condition')) {
+            case '22-8':
+                console.log('A conditional text has been displayed');
+                $('.condition').text('Now, you understand what the chains in the room were for and why Hae-Rin was so bruised.');
+                break;
+        }
+    }
+
 
     // .choice redirect (put url as div parameter)
     $('.choice').click(function () {
@@ -237,14 +246,18 @@ $(document).ready(function () {
 
         // display image immediately
         if ($('.story-node-image').length) {
-            if ($('.story-node-image').data('displayed') == false) {
-                $('.story-node-image').css({
-                    visibility: 'visible',
-                }).animate({
-                    opacity: 1
-                }, 300);
-                $('.story-node-image').data('displayed', 'true');
-            }
+            $('.story-node-image').each(function () {
+                var image = $(this);
+                if (image.data('displayed') == false) {
+                    console.log('Printing an image');
+                    image.css({
+                        visibility: 'visible',
+                    }).animate({
+                        opacity: 1
+                    }, 300);
+                    image.data('displayed', 'true');
+                }
+            });
         }
     }
 
@@ -253,6 +266,8 @@ $(document).ready(function () {
         timeBetweenParagraphs = 500;
 
     if ($('.story').length) {
+        // on-click, fast print everything
+        $(document).click(fastPrint);
 
         // store text of the story (name, p, choice)
         var name = $('.story-node-name').text(),
@@ -269,9 +284,6 @@ $(document).ready(function () {
 
         // print the story node name, letter by letter
         var nameTimerInt = setInterval(function () {
-
-            // on-click, fast print everything
-            $(document).click(fastPrint);
 
             $('.story-node-name').append(name[0]);
             name = name.substring(1);
