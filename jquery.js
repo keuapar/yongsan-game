@@ -196,6 +196,12 @@ $(document).ready(function () {
                         condition.text('Si Won cowers and shoots you an apologetic look as the two men take you away. You are brought back to the house where it all began, but not without a lot of kicking and screaming. Hae-Rin gives you a sad smile as they put you back into that room and teach you what happens when you try to escape.');
                     }
                     break;
+                case '64-62':
+                    if (Cookies.get('62') == 'True') {
+                        console.log('A conditional choice has been displayed');
+                        condition.attr('url', '65.html')
+                    }
+                    break;
             }
         });
     }
@@ -276,9 +282,10 @@ $(document).ready(function () {
         $('.story-node-choice').append(choice);
         choice = '';
 
-        // play audio immediately
+        // cancel playing audio
         if ($('.story-node-audio').length && $('.story-node-audio').data('played') == false) {
-            $('.story-node-audio').trigger('play');
+            $('.story-node-audio').data('played', 'true');
+
         }
 
         // display image immediately
