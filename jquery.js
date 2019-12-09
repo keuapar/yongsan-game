@@ -175,6 +175,9 @@ $(document).ready(function () {
             console.log('Cookies have been reset');
             window.location = $(this).attr('url');
             return false;
+        } else if ($(this).attr('data-cookiename') == 'feedback') {
+            var win = window.open('https://forms.gle/n76vPkZDevVY2DfH9', '_blank');
+            win.focus();
         } else {
             Cookies.set($(this).attr('data-cookiename'), $(this).attr('data-cookievalue'))
             window.location = $(this).attr('url');
