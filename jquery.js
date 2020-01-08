@@ -133,27 +133,51 @@ $(document).ready(function () {
     // color unlocked characters
     if (Cookies.get('med1') == 'Unlocked') {
         $('.med1').addClass('unlocked');
-        $('.med1 .med-name').text('Daegutang shop owner');
+        if (Cookies.get('lang') == 'KR') {
+            $('.med1 .med-name').text('대구탕 식당주인');
+        } else {
+            $('.med1 .med-name').text('Daegutang shop owner');
+        }
     }
     if (Cookies.get('med2') == 'Unlocked') {
         $('.med2').addClass('unlocked');
-        $('.med2 .med-name').text('Park Soo-Geun');
+        if (Cookies.get('lang') == 'KR') {
+            $('.med2 .med-name').text('박소금');
+        } else {
+            $('.med2 .med-name').text('Park Soo-Geun');
+        }
     }
     if (Cookies.get('med3') == 'Unlocked') {
         $('.med3').addClass('unlocked');
-        $('.med3 .med-name').text('Samgakji artist');
+        if (Cookies.get('lang') == 'KR') {
+            $('.med3 .med-name').text('대중 미술가');
+        } else {
+            $('.med3 .med-name').text('Samgakji artist');
+        }
     }
     if (Cookies.get('med4') == 'Unlocked') {
         $('.med4').addClass('unlocked');
-        $('.med4 .med-name').text('American soldier');
+        if (Cookies.get('lang') == 'KR') {
+            $('.med4 .med-name').text('미국 군인');
+        } else {
+            $('.med4 .med-name').text('American soldier');
+        }
     }
     if (Cookies.get('med5') == 'Unlocked') {
         $('.med5').addClass('unlocked');
-        $('.med5 .med-name').text('Mama-san');
+        if (Cookies.get('lang') == 'KR') {
+            $('.med5 .med-name').text('마마산');
+        } else {
+            $('.med5 .med-name').text('Mama-san');
+        }
     }
     if (Cookies.get('med6') == 'Unlocked') {
         $('.med6').addClass('unlocked');
-        $('.med6 .med-name').text('Photo studio owner');
+        if (Cookies.get('lang') == 'KR') {
+            $('.med6 .med-name').text('사진관 주인');
+        } else {
+            $('.med6 .med-name').text('Photo studio owner');
+        }
     }
 
     if ($('.condition').length) {
@@ -161,39 +185,57 @@ $(document).ready(function () {
             var condition = $(this);
             switch (condition.attr('data-condition')) {
                 case '22-8':
-                    if (Cookies.get('8') == 'True') {
+                    if (Cookies.get('8') == 'True' && Cookies.get('lang') == 'EN') {
                         console.log('A conditional text has been displayed');
                         condition.text('Now, you understand what the chains in the room were for and why Hae-Rin was so bruised.');
+                    } else if (Cookies.get('8') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('이제, 너는 방에 있는 체인이 무엇을 위해 있고, 왜 혜린이가 잡혀있는지 이해하게 될거야');
                     }
                     break;
                 case '33-6':
-                    if (Cookies.get('6') == 'True') {
+                    if (Cookies.get('6') == 'True' && Cookies.get('lang') == 'EN') {
                         console.log('A conditional text has been displayed');
                         condition.text('You are brought back to the house where it all began, but not without a lot of kicking and screaming. Hae-Rin gives you a sad smile as they put you back into that room and teach you what happens when you try to escape.');
+                    } else if (Cookies.get('6') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('모든 곳이 시작되었던 집으로 다시 끌려왔고, 하지만 거기에서는 다시 폭력과 비명은 없었다. 이게 지나가면 혜린이 슬픈 미소를 보내온다. 그들은 다시 당신을 방에 넣고 도망치면 어떤일이 일어나는 지를 가르쳐줄 것이다.');
                     }
                     break;
                 case '35-63':
-                    if (Cookies.get('63') == 'True') {
+                    if (Cookies.get('63') == 'True' && Cookies.get('lang') == 'EN') {
                         console.log('A conditional text has been displayed');
                         condition.text('You meet that girl again and you feel like screaming at her for conning you into this life, but she shrugs. “A girl has to eat,” she tells you. “And Mama pays well.”');
+                    } else if (Cookies.get('63') == 'True') {
+                        condition.text('당신은 그 여자에게 당신을 속여 이렇게 살게 내버려둔다고 소리치고 싶지만, 그녀는 어깨를 으쓱한다. "그래도 마마는 돈은 잘줘."');
                     }
                     break;
                 case '35-66':
-                    if (Cookies.get('66') == 'True') {
+                    if (Cookies.get('66') == 'True' && Cookies.get('lang') == 'EN') {
                         console.log('A conditional text has been displayed');
                         condition.text('You meet that girl again and you feel like screaming at her for conning you into this life, but she shrugs. “Sometimes freedom requires a little sacrifice,” she tells you. “If you don’t think about the bad parts, everything else is pretty sweet.”');
+                    } else if (Cookies.get('66') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('당신은 그 여자에게 당신을 속여 이렇게 살게 내버려둔다고 소리치고 싶지만, "가끔 자유는 조금의 희생을 요구하지." 라고 마마가 당신에게 말을한다. "만약 부정적인걸 조금만 생각하지 않는다면, 나머지는 굉장히 괜찮은 걸 알게될 거야."');
                     }
+
                     break;
                 case '38-8':
-                    if (Cookies.get('8') == 'True') {
+                    if (Cookies.get('8') == 'True' && Cookies.get('lang') == 'EN') {
                         console.log('A conditional text has been displayed');
                         condition.text('“What’s your name? When I get out, I’ll get someone to save you. A smile touches the corners of her mouth. “I’m Hae-Rin. Good luck.”');
+                    } else if (Cookies.get('8') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('“이름이 뭐야? 만약 내가 나간다면, 너를 구해줄게. 그녀는 살짝 미소를 띄웠다. "난 혜린이야. 꼭 성공해야돼."');
                     }
                     break;
                 case '58-6':
-                    if (Cookies.get('6') == 'True') {
+                    if (Cookies.get('6') == 'True' && Cookies.get('lang') == 'EN') {
                         console.log('A conditional text has been displayed');
                         condition.text('Si Won cowers and shoots you an apologetic look as the two men take you away. You are brought back to the house where it all began, but not without a lot of kicking and screaming. Hae-Rin gives you a sad smile as they put you back into that room and teach you what happens when you try to escape.');
+                    } else if (Cookies.get('6') == 'True') {
+                        console.log('A conditional text has been displayed');
+                        condition.text('시원은 미안한 표정으로 널 처다봤고 두 남자는 당신을 다시 데려간다. 당신은 모든 것이 시작되었던 그 집으로 비명과 폭력과 함께 돌아왔다. 혜린은 슬픈 미소를 짓는다, 그들은 당신을 다시 방으로 집어넣고 탈출하게 되면 어떤일이 일어나는지 가르쳐준다.');
                     }
                     break;
                 case '64-62':
@@ -228,8 +270,13 @@ $(document).ready(function () {
             window.location = $(this).attr('url');
             return false;
         } else if ($(this).attr('data-cookiename') == 'feedback') {
-            var win = window.open('https://forms.gle/n76vPkZDevVY2DfH9', '_blank');
-            win.focus();
+            if (Cookies.get('lang') == 'KR') {
+                var win = window.open('https://forms.gle/S6vA7aqCkcDZ5s2v7', '_blank');
+                win.focus();
+            } else {
+                var win = window.open('https://forms.gle/n76vPkZDevVY2DfH9', '_blank');
+                win.focus();
+            }
         } else {
             Cookies.set($(this).attr('data-cookiename'), $(this).attr('data-cookievalue'))
             window.location = $(this).attr('url');
@@ -386,26 +433,48 @@ $(document).ready(function () {
 
     // switch map and back to game
     $('.map-button').click(function () {
-        // switch from GAME to MAP
-        if ($('.map-button-text').text() == 'MAP') {
-            $('.map-button-text').text('BACK');
-            $('.map').css({
-                visibility: 'visible',
-                opacity: 0
-            }).animate({
-                opacity: 1
-            }, 300);
-            //$('.map').css('visibility', 'visible');
-        } else { // switch from MAP to GAME
-            $('.map-button-text').text('MAP');
-            $('.map').css({
-                opacity: 1
-            }).animate({
-                opacity: 0
-            }, 300, function () {
-                $('.map').css('visibility', 'hidden');
-            });
-            //$('.map').css('visibility', 'hidden');
+        if (Cookies.get('lang') == 'KR') { // switch from GAME to MAP
+            if ($('.map-button-text').text() == '지도') {
+                $('.map-button-text').text('뒤로');
+                $('.map').css({
+                    visibility: 'visible',
+                    opacity: 0
+                }).animate({
+                    opacity: 1
+                }, 300);
+                //$('.map').css('visibility', 'visible');
+            } else { // switch from MAP to GAME
+                $('.map-button-text').text('지도');
+                $('.map').css({
+                    opacity: 1
+                }).animate({
+                    opacity: 0
+                }, 300, function () {
+                    $('.map').css('visibility', 'hidden');
+                });
+                //$('.map').css('visibility', 'hidden');
+            }
+        } else {
+            if ($('.map-button-text').text() == 'MAP') {
+                $('.map-button-text').text('BACK');
+                $('.map').css({
+                    visibility: 'visible',
+                    opacity: 0
+                }).animate({
+                    opacity: 1
+                }, 300);
+                //$('.map').css('visibility', 'visible');
+            } else { // switch from MAP to GAME
+                $('.map-button-text').text('MAP');
+                $('.map').css({
+                    opacity: 1
+                }).animate({
+                    opacity: 0
+                }, 300, function () {
+                    $('.map').css('visibility', 'hidden');
+                });
+                //$('.map').css('visibility', 'hidden');
+            }
         }
     });
 
